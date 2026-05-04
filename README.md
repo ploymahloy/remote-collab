@@ -1,6 +1,6 @@
 # remote-collab (TODO: Name project 😆)
 
-**Low-latency remote collaboration for bedroom audio engineers to recording studios.**
+**Low-latency remote collaboration for audio engineers ranging from bedroom dorm rooms to award-winning recording studios.**
 
 The goal is to deliver something in the spirit of [Evercast](https://www.evercast.us/)—real-time review and collaboration—but tuned for home studios and small rooms: reliable audio routing, video that stays in sync with what you hear, and an experience that feels like you are in the same room.
 
