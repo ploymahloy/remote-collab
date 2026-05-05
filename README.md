@@ -6,12 +6,10 @@ The goal is to deliver something in the spirit of [Evercast](https://www.evercas
 
 ## North star
 
-
 | Target                             | Why it matters                                                                                                                            |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | **End-to-end latency under 40 ms** | Musicians and engineers perceive delay quickly; staying under ~40 ms keeps talkback, playback, and reactions feeling natural.             |
 | **Seamless AV**                    | Video and audio must stay locked together—no distracting drift, stutter, or “TV delay” lip sync when critiquing a mix or tracking a take. |
-
 
 Everything in this repo—transport choices, buffering, clocking, and UI—should be judged against those two constraints.
 
@@ -19,14 +17,8 @@ Everything in this repo—transport choices, buffering, clocking, and UI—shoul
 
 The project is early. The current binary uses [cpal](https://github.com/RustAudio/cpal) to enumerate audio hosts and input/output devices on your machine—a foundation for building capture, monitoring, and streaming paths.
 
-## Requirements
+## Stack
 
-- [Rust](https://www.rust-lang.org/tools/install) (toolchain matching this crate’s `edition` in `Cargo.toml`)
-
-## Run
-
-```bash
-cargo run
-```
-
-You should see a list of audio backends and devices for your platform.
+- **Tauri** — desktop shell and native layer for the client in `[client/](client/)` (`[client/src-tauri/](client/src-tauri/)`).
+- **Rust** — Tauri host process and commands, plus the audio/server crate in `[server/](server/)` for device enumeration.
+- **React + Vite + TypeScript** - client UI that runs in the Tauri webview.
